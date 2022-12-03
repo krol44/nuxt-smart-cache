@@ -1,0 +1,25 @@
+{
+  "name": "@krol44/nuxt-smart-cache",
+  "version": "1.0.0",
+  "description": "Cache pages on ssr, anti-ddos",
+  "main": "module.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krol44/nuxt-smart-cache.git"
+  },
+  "keywords": [
+    "nuxt",
+    "ssr",
+    "vue",
+    "spa",
+    "cache",
+    "anti-ddos"
+  ],
+  "author": "krol44 <krol44@me.com> (https://krol44.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krol44/nuxt-smart-cache/issues"
+  },
+  "homepage": "https://github.com/krol44/nuxt-smart-cache#readme"
+}
