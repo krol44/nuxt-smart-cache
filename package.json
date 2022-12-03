@@ -1,6 +1,6 @@
 {
   "name": "@krol44/nuxt-smart-cache",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Cache pages on ssr, anti-ddos",
   "main": "module.js",
   "scripts": {},
