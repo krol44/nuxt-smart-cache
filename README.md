@@ -1,5 +1,5 @@
 # nuxt-smart-cache
-
+[![NPM version](https://img.shields.io/npm/v/@krol44/nuxt-smart-cache)](https://www.npmjs.com/package/@krol44/nuxt-smart-cache)
 ## About
 
 Nuxtjs module - cache pages on ssr, anti-ddos
@@ -14,10 +14,10 @@ add to nuxt.config.js
 
 ```javascript
 modules: [
-  ['nuxt-smart-cache', {
+  ['@krol44/nuxt-smart-cache', {
     antiDdos: {
       enable: true, // default true
-      maxRequestsForTime: [20, 5], // default 20 - request for 5 seconds
+      maxRequestsForTime: [20, 5], // default - 20 request for 5 seconds and will be locked
       timeToLockingSsr: 600 // default 600 seconds
     },
     cache:

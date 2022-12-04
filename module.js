@@ -24,8 +24,6 @@ export default function smartCache (config) {
     }, ...config.cache
   }
 
-  console.log(config)
-
   if (config.cache.rmAllAfterStart) {
     if (existsSync(config.cache.pathTempFiles)) {
       rmSync(config.cache.pathTempFiles, { recursive: true })
@@ -60,10 +58,15 @@ export default function smartCache (config) {
 
         if (arr && arr.length >= config.antiDdos.maxRequestsForTime[0]) {
           let res = arr.pop() - arr.shift()
-          console.log(clientIp + ' - ' + config.antiDdos.maxRequestsForTime[0] + ' requests: '
-            + Math.round(res / 1000) + ' sec - enable spa on 1 hour')
-          mapIpClients.set(clientIp, Math.round(res / 1000) <= config.antiDdos.maxRequestsForTime[1] ?
-            ['spa', Date.now()] : [])
+
+          let arrSet = []
+          if (Math.round(res / 1000) <= config.antiDdos.maxRequestsForTime[1]) {
+            console.log(clientIp + ' - ' + config.antiDdos.maxRequestsForTime[0] + ' requests: '
+              + Math.round(res / 1000) + ' sec - enable spa on 1 hour')
+            arrSet = ['spa', Date.now()]
+          }
+
+          mapIpClients.set(clientIp, arrSet)
         }
       }
 

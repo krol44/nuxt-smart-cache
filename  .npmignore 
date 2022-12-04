@@ -1,12 +1,14 @@
+.idea
+
+# macOS
+.DS_Store
+
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-src
-src/*
 
 # Runtime data
 pids
@@ -39,7 +41,6 @@ bower_components
 
 # Optional REPL history
 .node_repl_history
-.idea
 
 # Yarn Integrity file
 .yarn-integrity
