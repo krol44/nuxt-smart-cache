@@ -4,7 +4,7 @@
 
 ## About
 
-Nuxtjs module - cache pages on ssr, anti-ddos
+Nuxtjs 2 module - cache pages on ssr to the disk, anti-ddos
 
 ## Demo
 
@@ -12,26 +12,37 @@ https://langlija.com - if you press f5 many times, spa mode will be activated
 
 ## Setup
 
-add to nuxt.config.js
+1. `npm i --save @krol44/nuxt-smart-cache`
+2. `add to nuxt.config.js`
+
 
 ```javascript
 modules: [
   ['@krol44/nuxt-smart-cache', {
     antiDdos: {
-      enable: true, // default true
-      maxRequestsForTime: [20, 5], // default - 20 request for 5 seconds and will be locked
-      timeToLockingSsr: 600 // default 600 seconds
+      // default true
+      enable: true,
+      // default - 20 request for 5 seconds and will be locked
+      maxRequestsForTime: [20, 5],
+      // default 600 seconds
+      timeToLockingSsr: 600
     },
     cache: {
-      enable: true, // default true
-      pathTempFiles: '/tmp/langlija_cache_pages', // default - /tmp/nuxt_cache_pages
-      nameCookieForDisable: 'token', // default - token
-      rmAllAfterStart: false, // default - true
-      ttlFile: 3600 * 24 * 10, // default - 3600 seconds
+      // default true
+      enable: true,
+      // default - /tmp/nuxt_cache_pages
+      pathTempFiles: '/tmp/langlija_cache_pages',
+      // default - token
+      nameCookieForDisable: 'token',
+      // default - true
+      rmAllAfterStart: false,
+      // default - 3600 seconds
+      ttlFile: 3600 * 24 * 10,
+      // default - []
       ignorePages: [
         '/',
         /\/dictionary.*/
-      ] // default - []
+      ]
     }
   }]
 ]
